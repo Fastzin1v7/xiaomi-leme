@@ -1,0 +1,51 @@
+/* Grão sutil sobre o fundo escuro — dá textura de "estúdio fotográfico"
+   sem competir com a fotografia real do produto. */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Elemento de assinatura: "reflexo de lente" que acompanha o cursor
+   sobre as fotografias — remete ao acabamento em metal/vidro e à
+   ótica Leica sem recorrer a 3D. Controlado via --x / --y (JS). */
+.lens-highlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    380px circle at var(--x, 50%) var(--y, 50%),
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 106, 43, 0.06) 35%,
+    transparent 65%
+  );
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+.group:hover .lens-highlight,
+.lens-highlight.is-active {
+  opacity: 1;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.nav-shrink {
+  transition: padding 0.45s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.45s ease;
+}
