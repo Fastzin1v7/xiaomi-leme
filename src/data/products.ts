@@ -138,7 +138,7 @@ export const products: Product[] = [
 
     images: [
       {
-        src: "/assets/poco.mp4",
+        src: "/assets/videos/poco.mp4",
         alt: "POCO",
         kind: "frontal",
         type: "video",
@@ -171,7 +171,7 @@ export const products: Product[] = [
 
     images: [
       {
-        src: "/assets/redmi.mp4",
+        src: "/assets/videos/redmi.mp4",
         alt: "Redmi",
         kind: "frontal",
         type: "video",
@@ -203,7 +203,7 @@ export const products: Product[] = [
 
     images: [
       {
-        src: "/assets/pad.mp4",
+        src: "/assets/videos/pad.mp4",
         alt: "Xiaomi Pad",
         kind: "frontal",
         type: "video",
@@ -235,7 +235,7 @@ export const products: Product[] = [
 
     images: [
       {
-        src: "/assets/band.mp4",
+        src: "/assets/videos/band.mp4",
         alt: "Xiaomi Band",
         kind: "frontal",
         type: "video",
